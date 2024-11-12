@@ -1,0 +1,187 @@
+@import url(./switzer.css);
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para las secciones de diseño gráfico y fotografía */
+#graphic-design,
+#photography {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+#graphic-design .row,
+#photography .row {
+    position: relative;
+    z-index: 2;
+}
+
+#graphic-design img,
+#photography img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+#graphic-design h2,
+#photography h2 {
+    margin-top: 60%;
+    font-family: 'Fraunces', serif;
+    font-size: 2.5rem;
+    color: hsl(167, 40%, 24%);
+}
+
+#graphic-design p,
+#photography p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: hsl(167, 40%, 24%);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#photography h2,
+#photography p {
+    color: hsl(198, 62%, 26%);
+}
+
+/* Estilos para la sección de testimonios */
+#testimonials {
+    padding: 100px 0;
+    background-color: hsl(0, 0%, 100%);
+}
+
+#testimonials h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    color: hsl(210, 4%, 67%);
+    margin-bottom: 80px;
+}
+
+#testimonials p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: hsl(213, 9%, 39%);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Media queries para responsividad */
+@media screen and (max-width: 768px) {
+    #graphic-design h2,
+    #photography h2 {
+        margin-top: 80%;
+        font-size: 2rem;
+    }
+
+    #testimonials {
+        padding: 60px 0;
+    }
+
+    #testimonials h2 {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    #hero {
+        background-image: url('../images/mobile/image-header.jpg');
+    }
+
+    #transform-img img {
+        content: url('../images/mobile/image-transform.jpg');
+    }
+
+    #stand-out-img img {
+        content: url('../images/mobile/image-stand-out.jpg');
+    }
+
+    #graphic-design {
+        background-image: url('../images/mobile/image-graphic-design.jpg');
+    }
+
+    #photography {
+        background-image: url('../images/mobile/image-photography.jpg');
+    }
+
+    .gallery-img1 {
+        background-image: url('../images/mobile/image-gallery-milkbottles.jpg');
+    }
+
+    .gallery-img2 {
+        background-image: url('../images/mobile/image-gallery-orange.jpg');
+    }
+
+    .gallery-img3 {
+        background-image: url('../images/mobile/image-gallery-cone.jpg');
+    }
+
+    .gallery-img4 {
+        background-image: url('../images/mobile/image-gallery-sugarcubes.jpg');
+    }
+}
+
+/* Imágenes para Desktop */
+@media screen and (min-width: 769px) {
+    #hero {
+        background-image: url('../images/desktop/image-header.jpg');
+    }
+
+    #transform-img img {
+        content: url('../images/desktop/image-transform.jpg');
+    }
+
+    #stand-out-img img {
+        content: url('../images/desktop/image-stand-out.jpg');
+    }
+
+    #graphic-design {
+        background-image: url('../images/desktop/image-graphic-design.jpg');
+    }
+
+    #photography {
+        background-image: url('../images/desktop/image-photography.jpg');
+    }
+
+    .gallery-img1 {
+        background-image: url('../images/desktop/image-gallery-milkbottles.jpg');
+    }
+
+    .gallery-img2 {
+        background-image: url('./assets/images/desktop/image-gallery-orange.jpg');
+    }
+
+    .gallery-img3 {
+        background-image: url('./assets/images/desktop/image-gallery-cone.jpg');
+    }
+
+    .gallery-img4 {
+        background-image: url('./assets/images/desktop/image-gallery-sugarcubes.jpg');
+    }
+}
+
+/* Propiedades comunes para imágenes de fondo */
+#hero,
+#graphic-design,
+#photography,
+.gallery-img1,
+.gallery-img2,
+.gallery-img3,
+.gallery-img4 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
