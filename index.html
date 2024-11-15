@@ -19,7 +19,8 @@
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand" href="#"><img src="./assets/images/logo.svg" alt="Logo" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -36,7 +37,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#proyects">Proyects</a>
           </li>
-          <button class="btn contact-btn">Contact</button>
+          <button class="btn contact-btn" id="contact">Contact</button>
         </ul>
       </div>
     </div>
@@ -50,7 +51,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
+        <div class="col-12 arrow-container">
           <img src="./assets/images/icon-arrow-down.svg" alt="Arrow down" />
         </div>
       </div>
@@ -73,61 +74,40 @@
   </section>
 
   <section id="stand-out">
-    <div class="container">
+    <div class="transform">
       <div class="row g-0 align-items-center">
         <div class="col-6" id="stand-out-text">
           <h2>Stand out to the right audience</h2>
           <p>Using a collaborative formula of designers, researchers, photographers, videographers, and
             copywriters, we’ll build and extend your brand in digital places.</p>
         </div>
-      </div>
-      <div>
         <div class="col-6" id="stand-out-img">
           <img src="./assets/images/mobile/image-stand-out.jpg" alt="Stand out to the right audience" class="w-100" />
         </div>
       </div>
     </div>
   </section>
-  <div class="container" id="graphic-design">
-    <div class="row">
-      <div class="col-12">
+  <section id="service">
+    <div class="container position-relative" id="graphic-design">
+      <img src="./assets/images/desktop/image-graphic-design.jpg" alt="Graphic design" class="w-100" />
+      <div class="service-content">
         <h2 class="text-center fw-semibold display-3">Graphic design</h2>
+        <p class="text-center">Great design makes you memorable. We deliver artwork that underscores your brand message
+          and captures potential clients' attention.</p>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12">
-        <p class="text-center">Great design makes you memorable. We deliver artwork that underscores your brand
-          message and
-          captures potential clients’ attention.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <img src="./assets/images/desktop/image-graphic-design.jpg" alt="Graphic design" class="w-100" />
-      </div>
-    </div>
-  </div>
-  <div class="container" id="photography">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="text-center fw-semibold display-3">Photography</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <p class="text-center">Increase your credibility by getting the most stunning, high-quality photos that
-          improve your
-          business image.</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <img src="./assets/images/desktop/image-photography.jpg" alt="Photography" class="w-100" />
-      </div>
-    </div>
-  </div>
 
-  <section id="testimonials" class="min-vh-100">
+    <div class="container position-relative" id="photography">
+      <img src="./assets/images/desktop/image-photography.jpg" alt="Photography" class="w-100" />
+      <div class="service-content">
+        <h2 class="text-center fw-semibold display-3">Photography</h2>
+        <p class="text-center">Increase your credibility by getting the most stunning, high-quality photos that improve
+          your business image.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -135,62 +115,85 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
-          <p class="text-center">We put our trust in Sunnyside and they delivered, making sure our needs were met and
-            deadlines
-            were always hit.</p>
+        <div class="col-md-4 text-center">
+          <img src="./assets/images/image-emily.jpg" alt="Emily R." class="testimonial-img">
+          <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always
+            hit.</p>
+          <p class="fw-semibold">Emily R.</p>
+          <p class="text-muted">Marketing Director</p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <img src="./assets/images/image-emily.jpg" alt="Emily R.">
-          <p class="text-center">Emily R.</p>
-          <p class="text-center">Marketing Director</p>
+        <div class="col-md-4 text-center">
+          <img src="./assets/images/image-thomas.jpg" alt="Thomas S." class="testimonial-img">
+          <p>Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and
+            enjoyable experience.</p>
+          <p class="fw-semibold">Thomas S.</p>
+          <p class="text-muted">Chief Operating Officer</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <img src="./assets/images/image-jennie.jpg" alt="Jennie F." class="testimonial-img">
+          <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+          <p class="fw-semibold">Jennie F.</p>
+          <p class="text-muted">Business Owner</p>
         </div>
       </div>
     </div>
   </section>
 
-  Learn more
+  <section id="proyects">
+    <div class="row g-0"> <!-- g-0 quita los gutters -->
+      <div class="col-3 p-0"> <!-- p-0 quita el padding -->
+        <a href="./assets/images/desktop/image-gallery-milkbottles.jpg" data-fancybox="gallery">
+          <img src="./assets/images/desktop/image-gallery-milkbottles.jpg" alt="Milk bottles"
+            class="w-100 gallery-img" />
+        </a>
+      </div>
+      <div class="col-3 p-0">
+        <a href="./assets/images/desktop/image-gallery-orange.jpg" data-fancybox="gallery">
+          <img src="./assets/images/desktop/image-gallery-orange.jpg" alt="Orange" class="w-100 gallery-img" />
+        </a>
+      </div>
+      <div class="col-3 p-0">
+        <a href="./assets/images/desktop/image-gallery-cone.jpg" data-fancybox="gallery">
+          <img src="./assets/images/desktop/image-gallery-cone.jpg" alt="Cone" class="w-100 gallery-img" />
+        </a>
+      </div>
+      <div class="col-3 p-0">
+        <a href="./assets/images/desktop/image-gallery-sugarcubes.jpg" data-fancybox="gallery">
+          <img src="./assets/images/desktop/image-gallery-sugarcubes.jpg" alt="Sugar cubes" class="w-100 gallery-img" />
+        </a>
+      </div>
+    </div>
+  </section>
 
-  Stand out to the right audience
-
-  Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build
-  and extend your brand in digital places.
-
-  Learn more
-
-  Graphic design
-  Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential
-  clients’ attention.
-
-  Photography
-  Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
-
-  Client testimonials
-
-  We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.
-  Emily R.
-  Marketing Director
-
-  Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable
-  experience.
-  Thomas S.
-  Chief Operating Officer
-
-  Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
-  Jennie F.
-  Business Owner
-
-  About
-  Services
-  Projects
-  Contact
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row text-center g-0">
+        <div class="col-12 mb-4">
+          <img src="./assets/images/logo.svg" alt="Logo" class="footer-logo" />
+        </div>
+        <div class="col-12">
+          <ul class="nav justify-content-center footer-nav">
+            <li class="nav-item">
+              <a href="#about" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#service" class="nav-link">Services</a>
+            </li>
+            <li class="nav-item">
+              <a href="#proyects" class="nav-link">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="#hero" class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="attribution mt-4">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/MiguelN794">Miguel N. Saleme Rossa</a>.
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>

@@ -1,140 +1,405 @@
 @import url(./switzer.css);
 
-/* Estilos generales */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos para las secciones de diseño gráfico y fotografía */
+/* Propiedades comunes para imágenes de fondo */
+#hero,
+#graphic-design,
+#photography,
+.gallery-img1,
+.gallery-img2,
+.gallery-img3,
+.gallery-img4 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #3EBFFF;
+}
+
+.navbar .nav-link {
+    color: white !important;
+}
+
+.navbar .navbar-toggler {
+    border-color: white;
+}
+
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Botón de contacto */
+.contact-btn {
+    background-color: white;
+    color: #23303e;
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: rgba(0, 0, 0, 0.781);
+    color: white;
+}
+
+
+#hero h1 {
+    font-size: 4.5rem;
+    /* Texto más grande */
+    margin-top: 5rem;
+    /* Mover texto más abajo */
+    letter-spacing: 0.5rem;
+    /* Mejorar espaciado entre letras */
+    text-transform: uppercase;
+    /* Mantener consistencia con el diseño */
+}
+
+#hero .arrow-container {
+    position: absolute;
+    bottom: 50%;
+    /* Bajamos la flecha ajustando el bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+#hero .arrow-container img {
+    height: 120px;
+    /* Hacemos la flecha más larga */
+    width: auto;
+}
+
+/* Secciones de texto */
+#transform-text,
+#stand-out-text {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#transform-text h2,
+#stand-out-text h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+#transform-text p,
+#stand-out-text p {
+    color: #818498;
+    margin-bottom: 2rem;
+    max-width: 80%;
+}
+
+/* Invertir el orden de la fila para Stand Out */
+#stand-out .row {
+    flex-direction: row-reverse !important;
+}
+
 #graphic-design,
 #photography {
     position: relative;
-    height: 100vh;
-    overflow: hidden;
-    color: #fff;
 }
 
-#graphic-design .row,
-#photography .row {
+.service-content {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+}
+
+.service-content h2 {
+    margin-bottom: 1.5rem;
+}
+
+
+.arrow-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.arrow-container img {
+    width: 30px;
+    height: auto;
+}
+
+#service {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#graphic-design,
+#photography {
     position: relative;
-    z-index: 2;
+    width: 50%;
+    /* Cada contenedor ocupa la mitad del ancho */
 }
 
 #graphic-design img,
 #photography img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
+    /* Mantiene la proporción de la imagen */
 }
 
-#graphic-design h2,
-#photography h2 {
-    margin-top: 60%;
-    font-family: 'Fraunces', serif;
-    font-size: 2.5rem;
-    color: hsl(167, 40%, 24%);
+/* Asegurarse que las imágenes tengan el mismo comportamiento */
+#transform-img img,
+#stand-out-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-#graphic-design p,
-#photography p {
-    font-family: 'Barlow', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: hsl(167, 40%, 24%);
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Ajustar las secciones de transform y stand-out */
+#transform,
+#stand-out {
+    height: 100%;
 }
 
-#photography h2,
-#photography p {
-    color: hsl(198, 62%, 26%);
+#transform .row,
+#stand-out .row {
+    height: 100%;
 }
 
-/* Estilos para la sección de testimonios */
+/* Ajustar los contenedores de imagen */
+#transform-img,
+#stand-out-img {
+    height: 668px;
+    /* Altura fija basada en las otras imágenes */
+}
+
+/* Testimonials Section */
 #testimonials {
-    padding: 100px 0;
-    background-color: hsl(0, 0%, 100%);
+    padding: 3rem 0;
+    /* Reducir el padding vertical */
 }
 
 #testimonials h2 {
-    font-family: 'Fraunces', serif;
-    font-size: 2rem;
-    color: hsl(210, 4%, 67%);
-    margin-bottom: 80px;
+    margin-bottom: 3rem;
+    /* Reducir el margen inferior del título */
+}
+
+#testimonials .testimonial-img {
+    width: 80px;
+    /* Reducir el tamaño de las imágenes */
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
 }
 
 #testimonials p {
-    font-family: 'Barlow', sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: hsl(213, 9%, 39%);
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
+    margin-bottom: 0.75rem;
+    /* Reducir el espacio entre párrafos */
+    font-size: 0.9rem;
+    /* Reducir ligeramente el tamaño del texto */
 }
 
-/* Media queries para responsividad */
+/* Proyectos */
+#proyects {
+    width: 100%;
+    overflow: hidden;
+}
+
+#proyects h2 {
+    margin-bottom: 3rem;
+}
+
+#proyects .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#proyects .gallery-img:hover {
+    transform: scale(1.05);
+}
+
+#proyects .col-md-3 {
+    padding: 0.5rem;
+}
+
+.footer {
+    background-color: #90d4c5;
+    padding: 6rem 0 2rem;
+    /* Aumentar el padding superior */
+}
+
+.footer-logo {
+    filter: brightness(0) saturate(100%) invert(27%) sepia(91%) saturate(1000%) hue-rotate(116deg) brightness(97%) contrast(105%);
+    width: 180px;
+    margin-top: 2rem;
+    /* Agregar margen superior al logo */
+}
+
+.footer-nav {
+    margin: 3rem 0;
+    /* Aumentar el margen para mantener la proporción */
+}
+
+.footer-nav .nav-link {
+    color: #458c7e;
+    transition: color 0.3s ease;
+}
+
+.footer-nav .nav-link:hover {
+    color: #23303e;
+}
+
+.attribution {
+    text-align: center;
+    font-size: 12px;
+    color: #458c7e;
+}
+
+.attribution a {
+    color: #23303e;
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    text-decoration: underline;
+}
+
+
 @media screen and (max-width: 768px) {
-    #graphic-design h2,
-    #photography h2 {
-        margin-top: 80%;
-        font-size: 2rem;
+
+    .navbar-collapse {
+        background-color: rgba(20, 37, 54, 0.384);
+        /* Color más oscuro que el home con transparencia */
+        margin-top: 1rem;
+        padding: 2rem;
+        border-radius: 1rem;
     }
 
-    #testimonials {
-        padding: 60px 0;
+    .navbar-nav {
+        text-align: center;
     }
 
-    #testimonials h2 {
-        font-size: 1.8rem;
-        margin-bottom: 40px;
+    .navbar-nav .nav-item {
+        margin: 1rem 0;
+    }
+
+    .navbar-nav .nav-link {
+        color: white !important;
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav .contact-btn {
+        margin-top: 1rem;
+        background-color: #3EBFFF;
+        color: white;
+    }
+
+    .navbar-nav .contact-btn:hover {
+        background-color: rgba(62, 191, 255, 0.7);
     }
 
     #hero {
         background-image: url('../images/mobile/image-header.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
     }
 
-    #transform-img img {
-        content: url('../images/mobile/image-transform.jpg');
+    #hero h1 {
+        font-size: 2.5rem;
+        margin-top: 8rem;
+        padding: 0 1rem;
+        letter-spacing: 0.4rem;
     }
 
+    #hero .arrow-container {
+        bottom: 30%;
+    }
+
+
+    /* About Section */
+    #transform,
+    #stand-out {
+        height: auto;
+    }
+
+    #transform .row,
+    #stand-out .row {
+        flex-direction: column;
+    }
+
+    #transform-text,
+    #stand-out-text {
+        padding: 4rem 2rem;
+        width: 100%;
+    }
+
+    #transform-img,
+    #stand-out-img {
+        width: 100%;
+        height: auto;
+    }
+
+    #transform-img img,
     #stand-out-img img {
-        content: url('../images/mobile/image-stand-out.jpg');
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: cover;
     }
 
-    #graphic-design {
-        background-image: url('../images/mobile/image-graphic-design.jpg');
+    /* Services Section */
+    #service {
+        flex-direction: column;
     }
 
+    #graphic-design,
     #photography {
-        background-image: url('../images/mobile/image-photography.jpg');
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 0;
     }
 
-    .gallery-img1 {
-        background-image: url('../images/mobile/image-gallery-milkbottles.jpg');
+    #graphic-design img,
+    #photography img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: cover;
     }
 
-    .gallery-img2 {
-        background-image: url('../images/mobile/image-gallery-orange.jpg');
+    .service-content {
+        bottom: 10%;
+        width: 90%;
+        padding: 0;
     }
 
-    .gallery-img3 {
-        background-image: url('../images/mobile/image-gallery-cone.jpg');
+    /* Testimonials Section */
+    #testimonials {
+        padding: 4rem 1.5rem;
     }
 
-    .gallery-img4 {
-        background-image: url('../images/mobile/image-gallery-sugarcubes.jpg');
+    .col-md-4 {
+        width: 100%;
+        margin-bottom: 3rem;
     }
 }
 
-/* Imágenes para Desktop */
 @media screen and (min-width: 769px) {
     #hero {
         background-image: url('../images/desktop/image-header.jpg');
@@ -173,15 +438,14 @@
     }
 }
 
-/* Propiedades comunes para imágenes de fondo */
-#hero,
-#graphic-design,
-#photography,
-.gallery-img1,
-.gallery-img2,
-.gallery-img3,
-.gallery-img4 {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(15px);
+    }
 }
