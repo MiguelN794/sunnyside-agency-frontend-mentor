@@ -321,13 +321,21 @@
 
     #hero h1 {
         font-size: 2.5rem;
-        margin-top: 8rem;
+        margin-top: 25vh;
         padding: 0 1rem;
         letter-spacing: 0.4rem;
     }
 
     #hero .arrow-container {
-        bottom: 30%;
+        position: absolute;
+        bottom: 40vh; /* Bajar la flecha */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #hero .arrow-container img {
+        height: 80px; /* Reducir tamaño de flecha en móvil */
+        width: auto;
     }
 
 
