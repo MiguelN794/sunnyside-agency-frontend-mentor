@@ -293,6 +293,9 @@
     color: white;
     font-size: 24px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .back-to-top:hover {
@@ -365,6 +368,11 @@
         width: 35px;
         height: 35px;
         font-size: 20px;
+    }
+
+    /* Ajustes para la galería en móviles */
+    #proyects .col-3 {
+        width: 50%;
     }
 }
 
@@ -554,37 +562,6 @@
 }
 
 /* Desktop Styles */
-@media screen and (min-width: 769px) and (max-width: 992px) {
-    #transform-text,
-    #stand-out-text {
-        padding: 3rem;
-    }
-
-    #transform-text h2,
-    #stand-out-text h2 {
-        font-size: 2rem;
-    }
-
-    #transform-text p,
-    #stand-out-text p {
-        font-size: 0.9rem;
-    }
-
-    .service-content {
-        bottom: 5%;
-    }
-
-    .service-content h2 {
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .service-content p {
-        font-size: 0.85rem;
-    }
-}
-
-/* All Desktop Styles */
 @media screen and (min-width: 769px) {
     #hero {
         background-image: url('../images/desktop/image-header.jpg');
