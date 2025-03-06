@@ -7,6 +7,16 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Switzer', sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* ===== UTILIDADES ===== */
 /* Propiedades comunes para imágenes de fondo */
 #hero,
@@ -35,10 +45,13 @@
 /* Navbar */
 .navbar {
     background-color: #3EBFFF;
+    padding: 1.5rem 0;
 }
 
 .navbar .nav-link {
     color: white !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
 }
 
 .navbar .navbar-toggler {
@@ -56,25 +69,31 @@
     border-radius: 2rem;
     padding: 0.5rem 1.5rem;
     transition: all 0.3s ease;
+    margin-left: 1rem;
 }
 
 .contact-btn:hover {
-    background-color: rgba(0, 0, 0, 0.781);
+    background-color: rgba(255, 255, 255, 0.3);
     color: white;
 }
 
 /* ===== SECCIONES ===== */
 /* Hero Section */
+#hero {
+    background-image: url('../images/desktop/image-header.jpg');
+    position: relative;
+}
+
 #hero h1 {
-    font-size: 4.5rem;
-    margin-top: 5rem;
+    font-size: 4rem;
+    margin-top: 0;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
 }
 
 #hero .arrow-container {
     position: absolute;
-    bottom: 50%;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
@@ -113,7 +132,7 @@
 
 /* Invertir el orden de la fila para Stand Out */
 #stand-out .row {
-    flex-direction: row-reverse !important;
+    flex-direction: row-reverse;
 }
 
 /* Ajustar las secciones de transform y stand-out */
@@ -130,7 +149,7 @@
 /* Ajustar los contenedores de imagen */
 #transform-img,
 #stand-out-img {
-    height: 668px;
+    height: auto;
 }
 
 /* Asegurarse que las imágenes tengan el mismo comportamiento */
@@ -144,7 +163,7 @@
 /* Services Section */
 #service {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -172,38 +191,42 @@
 
 .service-content h2 {
     margin-bottom: 1.5rem;
+    font-size: 2rem;
 }
 
 /* Testimonials Section */
 #testimonials {
-    padding: 3rem 0;
+    padding: 5rem 0;
+    background-color: #FFFBF8;
 }
 
 #testimonials h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    color: #A7ABAE;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 1.5rem;
 }
 
 #testimonials .testimonial-img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     object-fit: cover;
 }
 
 #testimonials p {
-    margin-bottom: 0.75rem;
-    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #5B636D;
+    line-height: 1.6;
 }
 
 /* Projects Section */
 #proyects {
     width: 100%;
     overflow: hidden;
-}
-
-#proyects h2 {
-    margin-bottom: 3rem;
 }
 
 #proyects .gallery-img {
@@ -217,20 +240,16 @@
     transform: scale(1.05);
 }
 
-#proyects .col-md-3 {
-    padding: 0.5rem;
-}
-
 /* Footer */
 .footer {
     background-color: #90d4c5;
-    padding: 6rem 0 2rem;
+    padding: 4rem 0 2rem;
+    color: #458c7e;
 }
 
 .footer-logo {
     filter: brightness(0) saturate(100%) invert(27%) sepia(91%) saturate(1000%) hue-rotate(116deg) brightness(97%) contrast(105%);
     width: 180px;
-    margin-top: 2rem;
 }
 
 .footer-nav {
@@ -240,6 +259,7 @@
 .footer-nav .nav-link {
     color: #458c7e;
     transition: color 0.3s ease;
+    font-weight: 600;
 }
 
 .footer-nav .nav-link:hover {
@@ -311,19 +331,22 @@
 /* ===== MEDIA QUERIES ===== */
 /* Mobile Styles (Smartphones) */
 @media screen and (max-width: 576px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+
     #hero h1 {
-        font-size: 2rem;
-        margin-top: 20vh;
-        padding: 0 1rem;
+        font-size: 2.5rem;
         letter-spacing: 0.3rem;
+        padding: 0 1rem;
     }
 
     #hero .arrow-container {
-        bottom: 35vh;
+        bottom: 20%;
     }
 
     #hero .arrow-container img {
-        height: 60px;
+        height: 80px;
     }
 
     #transform-text,
@@ -336,20 +359,31 @@
         font-size: 2rem;
     }
 
+    #transform-text p,
+    #stand-out-text p {
+        max-width: 100%;
+    }
+
+    .service-content {
+        bottom: 5%;
+        width: 90%;
+    }
+
     .service-content h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .service-content p {
         font-size: 0.9rem;
     }
 
-    .social-icons {
-        gap: 1rem;
+    #testimonials {
+        padding: 3rem 1rem;
     }
 
     #testimonials h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin-bottom: 2rem;
     }
 
@@ -360,186 +394,12 @@
     }
 
     #testimonials p {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         margin-bottom: 0.5rem;
     }
 
-    .back-to-top {
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
-    }
-
-    /* Ajustes para la galería en móviles */
-    #proyects .col-3 {
-        width: 50%;
-    }
-}
-
-/* Tablet Styles */
-@media screen and (min-width: 577px) and (max-width: 768px) {
-    #hero h1 {
-        font-size: 2.8rem;
-    }
-
-    #transform-text h2,
-    #stand-out-text h2 {
-        font-size: 2.2rem;
-    }
-
-    .service-content {
-        bottom: 8%;
-    }
-}
-
-/* Mobile & Tablet Shared Styles */
-@media screen and (max-width: 768px) {
-    /* Navbar */
-    .navbar-collapse {
-        background-color: rgba(20, 37, 54, 0.8);
-        margin-top: 1rem;
-        padding: 2rem;
-        border-radius: 0.5rem;
-        position: absolute;
-        top: 70px;
-        left: 5%;
-        right: 5%;
-        z-index: 1000;
-    }
-
-    .navbar-collapse::before {
-        content: '';
-        position: absolute;
-        top: -10px;
-        right: 0;
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid rgba(20, 37, 54, 0.8);
-    }
-
-    .navbar-nav {
-        text-align: center;
-    }
-
-    .navbar-nav .nav-item {
-        margin: 1rem 0;
-    }
-
-    .navbar-nav .nav-link {
-        color: white !important;
-        font-size: 1.2rem;
-    }
-
-    .navbar-nav .contact-btn {
-        margin-top: 1rem;
-        background-color: #FFDF00;
-        color: #23303e;
-        font-weight: bold;
-    }
-
-    .navbar-nav .contact-btn:hover {
-        background-color: rgba(255, 223, 0, 0.8);
-    }
-
-    /* Hero Section */
-    #hero {
-        background-image: url('../images/mobile/image-header.jpg');
-        background-size: cover;
-        background-position: center;
-        min-height: 100vh;
-    }
-
-    #hero h1 {
-        margin-top: 25vh;
-        padding: 0 1rem;
-        letter-spacing: 0.4rem;
-    }
-
-    #hero .arrow-container {
-        position: absolute;
-        bottom: 40vh;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    #hero .arrow-container img {
-        height: 80px;
-        width: auto;
-    }
-
-    /* About Section */
-    #transform,
-    #stand-out {
-        height: auto;
-    }
-
-    #transform .row,
-    #stand-out .row {
-        flex-direction: column;
-    }
-
-    #transform-text,
-    #stand-out-text {
-        padding: 4rem 2rem;
-        width: 100%;
-    }
-
-    #transform-img,
-    #stand-out-img {
-        width: 100%;
-        height: auto;
-    }
-
-    #transform-img img,
-    #stand-out-img img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-    }
-
-    /* Services Section */
-    #service {
-        flex-direction: column;
-    }
-
-    #graphic-design,
-    #photography {
-        width: 100%;
-        height: auto;
-        margin: 0;
-        padding: 0;
-    }
-
-    #graphic-design img,
-    #photography img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-    }
-
-    .service-content {
-        bottom: 10%;
-        width: 90%;
-        padding: 0;
-    }
-
-    /* Testimonials Section */
-    #testimonials {
-        padding: 4rem 1.5rem;
-    }
-
-    .col-md-4 {
-        width: 100%;
-        margin-bottom: 3rem;
-    }
-
-    /* Footer */
     .footer {
-        padding: 4rem 0 2rem;
+        padding: 3rem 0 1.5rem;
     }
 
     .footer-logo {
@@ -551,6 +411,7 @@
     }
 
     .social-icons {
+        gap: 1rem;
         margin-bottom: 1.5rem;
     }
 
@@ -558,6 +419,121 @@
         width: 35px;
         height: 35px;
         font-size: 20px;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    #hero h1 {
+        font-size: 3rem;
+    }
+
+    #transform-text,
+    #stand-out-text {
+        padding: 3rem 2rem;
+    }
+
+    #transform-text h2,
+    #stand-out-text h2 {
+        font-size: 2.2rem;
+    }
+
+    #transform-text p,
+    #stand-out-text p {
+        max-width: 90%;
+    }
+
+    .service-content {
+        bottom: 8%;
+    }
+
+    .service-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Mobile & Tablet Shared Styles */
+@media screen and (max-width: 768px) {
+    /* Navbar */
+    .navbar-collapse {
+        background-color: white;
+        margin-top: 1.5rem;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        position: absolute;
+        top: 70px;
+        left: 5%;
+        right: 5%;
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-collapse::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: 30px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid white;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 1rem 0;
+    }
+
+    .navbar-nav .nav-link {
+        color: #818498 !important;
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav .contact-btn {
+        margin: 1rem auto 0;
+        background-color: #FFDF00;
+        color: #23303e;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .navbar-nav .contact-btn:hover {
+        background-color: rgba(255, 223, 0, 0.8);
+    }
+
+    /* Hero Section */
+    #hero {
+        background-image: url('../images/mobile/image-header.jpg');
+        text-align: center;
+    }
+
+    /* About Section */
+    #transform .row,
+    #stand-out .row {
+        flex-direction: column;
+    }
+
+    #stand-out .row {
+        flex-direction: column;
+    }
+
+    /* Services Section */
+    #service {
+        flex-direction: column;
+    }
+
+    #graphic-design,
+    #photography {
+        width: 100%;
+    }
+
+    /* Testimonials Section */
+    #testimonials .col-md-4 {
+        margin-bottom: 3rem;
     }
 }
 
@@ -581,22 +557,6 @@
 
     #photography {
         background-image: url('../images/desktop/image-photography.jpg');
-    }
-
-    .gallery-img1 {
-        background-image: url('../images/desktop/image-gallery-milkbottles.jpg');
-    }
-
-    .gallery-img2 {
-        background-image: url('../images/desktop/image-gallery-orange.jpg');
-    }
-
-    .gallery-img3 {
-        background-image: url('../images/desktop/image-gallery-cone.jpg');
-    }
-
-    .gallery-img4 {
-        background-image: url('../images/desktop/image-gallery-sugarcubes.jpg');
     }
 }
 
